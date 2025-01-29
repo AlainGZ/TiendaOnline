@@ -5,6 +5,7 @@ import com.tienda.usuarios.Service.UsuarioService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/usuarios")
@@ -26,4 +27,22 @@ public class UsuarioController {
         return usuarioService.guardarUsuario(usuarios);
     }
 
+
+
+    // Endpoint para iniciar sesión
+    @PostMapping("/login")
+    public Map<String, Object> login(@RequestBody Map<String, String> request) {
+        String email = request.get("email");
+        String password = request.get("password");
+
+        Usuarios usuarioAutenticado = usuarioService.autenticarUsuario(email, password);
+
+        // Evitar enviar la contraseña en la respuesta
+        return Map.of(
+                "message", "Inicio de sesión exitoso",
+                "id", usuarioAutenticado.getId(),
+                "nombre", usuarioAutenticado.getNombre(),
+                "email", usuarioAutenticado.getEmail()
+        );
+    }
 }
