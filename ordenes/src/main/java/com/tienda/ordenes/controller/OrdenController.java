@@ -11,7 +11,7 @@ import java.util.List;
 public class OrdenController {
 	private final OrdenService ordenService;
 
-	public OrdenConroller(OrdenService ordenService){
+	public OrdenController(OrdenService ordenService){
 		this.ordenService = ordenService;
 	}
 
