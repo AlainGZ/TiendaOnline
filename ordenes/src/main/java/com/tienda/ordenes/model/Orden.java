@@ -1,4 +1,4 @@
-package com.tienda.ordenes.controller;
+package com.tienda.ordenes.model;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -15,13 +15,13 @@ public class Orden {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(nullable = false, unique = true)
-	private int usuarioId;
+	private Long usuarioId;
 
-	@Column(nullable = false)
-	private String productos;
+	private LocalDateTime fecha;
 
-	@Column(nullable = false)
 	private double total;
+
+	@ElementCollection
+	private List<Long> productos;
 
 }
