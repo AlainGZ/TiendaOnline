@@ -1,0 +1,127 @@
+/* Importamos una fuente desde Google Fonts para mejorar la tipografía */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Reset básico y box-sizing para todos los elementos */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilo para el body con un fondo degradado y buena tipografía */
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #f0f4ff, #ffffff);
+  color: #333;
+  padding: 40px;
+}
+
+/* Contenedor central para la interfaz */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezados centrados y con color */
+h1, h2 {
+  color: #1d3557;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Secciones con margen inferior */
+section {
+  margin-bottom: 30px;
+}
+
+/* Estilo para el formulario de creación de orden */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* Estilo para inputs: se ajustan y tienen bordes redondeados */
+form input[type="number"],
+form input[type="text"] {
+  flex: 1 1 40%;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+/* Cuando el input tiene foco, cambia el color del borde */
+form input:focus {
+  border-color: #1d3557;
+  outline: none;
+}
+
+/* Estilo para el botón del formulario */
+form button {
+  padding: 10px 25px;
+  background: #1d3557;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+/* Hover para el botón */
+form button:hover {
+  background: #457b9d;
+}
+
+/* Mensaje de confirmación o error en el formulario */
+#mensajeOrden {
+  text-align: center;
+  margin: 15px 0;
+  font-weight: bold;
+}
+
+/* Estilos para la lista de órdenes */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  background: #f1f1f1;
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 10px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+/* Efecto hover para los items de la lista */
+ul li:hover {
+  transform: scale(1.02);
+  background: #e0e0e0;
+}
+
+/* Botón para cargar órdenes */
+#btnCargarOrdenes {
+  display: block;
+  margin: 0 auto 20px auto;
+  padding: 10px 20px;
+  background: #1d3557;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+#btnCargarOrdenes:hover {
+  background: #457b9d;
+}
