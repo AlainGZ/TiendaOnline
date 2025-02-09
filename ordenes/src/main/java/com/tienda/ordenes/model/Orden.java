@@ -27,4 +27,11 @@ public class Orden {
 	@ElementCollection
 	private List<Long> productos;
 
+	public void setFecha(LocalDateTime fecha) {
+		this.fecha = fecha;
+	}
+
+	public LocalDateTime getFecha() {
+		return fecha;
+	}
 }
