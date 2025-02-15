@@ -5,6 +5,7 @@ import com.tienda.envios.repository.EnvioRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class EnvioService {
@@ -15,6 +16,12 @@ public class EnvioService {
 	}
 	public List<Envio> obtenerTodos() {
 		return envioRepository.findAll();
+	}
+	public List<Envio> obtenerPorOrdenId(Long ordenId) {
+		return envioRepository.findByOrdenId(ordenId);
+	}
+	public Optional<Envio> obtenerPorId(Long id) {
+		return envioRepository.findById(id);
 	}
 
 

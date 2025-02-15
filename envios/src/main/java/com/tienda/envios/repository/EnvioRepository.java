@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface EnvioRepository extends JpaRepository<Envio, Long>{
 
-	List<Envio> findAllById(Long ordenId);
+	List<Envio> findByOrdenId(Long ordenId);
 }
