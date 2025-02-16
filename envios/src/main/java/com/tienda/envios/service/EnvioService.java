@@ -4,6 +4,7 @@ import com.tienda.envios.model.Envio;
 import com.tienda.envios.repository.EnvioRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,6 +24,9 @@ public class EnvioService {
 	public Optional<Envio> obtenerPorId(Long id) {
 		return envioRepository.findById(id);
 	}
-
+	public Envio crearEnvio(Envio envio){
+		envio.setFechaEnvio(LocalDateTime.now());
+		return envioRepository.save(envio);
+	}
 
 }
