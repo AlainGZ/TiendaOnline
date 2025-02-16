@@ -29,4 +29,13 @@ public class EnvioService {
 		return envioRepository.save(envio);
 	}
 
+	public Envio actualizarEnvio(Long id, Envio envioActualizado) {
+		return envioRepository.findById(id).map(envio -> {
+			envio.setOrdenId(envioActualizado.getOrdenId());
+			envio.setEstado(envioActualizado.getEstado());
+			envio.setTrackingNumber(envioActualizado.getTrackingNumber());
+			// Puedes decidir si actualizas la fecha o la dejas original
+			return envioRepository.save(envio);
+		}).orElseThrow(() -> new RuntimeException("Envío no encontrado"));
+	}
 }
