@@ -34,8 +34,11 @@ public class EnvioService {
 			envio.setOrdenId(envioActualizado.getOrdenId());
 			envio.setEstado(envioActualizado.getEstado());
 			envio.setTrackingNumber(envioActualizado.getTrackingNumber());
-			// Puedes decidir si actualizas la fecha o la dejas original
+
 			return envioRepository.save(envio);
 		}).orElseThrow(() -> new RuntimeException("Envío no encontrado"));
+	}
+	public void eliminarEnvio(Long id){
+		envioRepository.deleteById(id);
 	}
 }
