@@ -21,7 +21,7 @@ public class EnvioController {
 		return envioService.obtenerTodos();
 	}
 
-	@GetMapping("/orden/{ordenId")
+	@GetMapping("/orden/{ordenId}")
 	public List<Envio> listarEnviosPorOrden(@PathVariable Long ordenId){
 		return envioService.obtenerPorOrdenId(ordenId);
 	}
