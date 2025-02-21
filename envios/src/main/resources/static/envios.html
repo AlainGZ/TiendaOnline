@@ -2,31 +2,40 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Gestion de Envios</title>
+    <title>Gestión de Envíos</title>
     <link rel="stylesheet" href="envios.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Gestion de Envios</h1>
+<div class="container">
+    <h1>Gestión de Envíos</h1>
 
-            <section>
-               <h2>Crear Envio</h2>
-               <form id="formEnvio">
-                    <input type="number" id="ordenId" placeholder="ID de la Orden" required>
-                    <input type="text" id="estado" placeholder="Estado del Envio" required>
-                    <input type="text" id="trakingNumber" placeholder="Numero de Seguimiento" required>
-                    <button type="submit">Crear Envio</button>
-               </form>
-                <p id="mensajeEnvio"></p>
-            </section>
 
-            <section>
-                <h2>Listado de Envios</h2>
-                <button id="btnCargarEnvios" onclick="cargarEnvios()">Cargar Envios</button>
-                <ul id="listaEnvios"></ul>
-            </section>
+    <section>
+        <h2>Crear / Actualizar Envío</h2>
 
-    </div>
-    <script src="envios.js"></script>
+        <form id="envioForm">
+            <input type="hidden" id="envioId">
+            <input type="number" id="ordenId" placeholder="ID de la Orden" required>
+            <input type="text" id="estado" placeholder="Estado del Envío" required>
+            <input type="text" id="trackingNumber" placeholder="Número de Seguimiento" required>
+            <button type="submit" id="btnSubmit">Crear Envío</button>
+            <button type="button" id="btnCancel" style="display:none;">Cancelar</button>
+        </form>
+        <p id="mensajeEnvio"></p>
+    </section>
+
+
+    <section>
+        <h2>Listado de Envíos</h2>
+        <div class="filter">
+            <input type="number" id="filterOrdenId" placeholder="Filtrar por ID de Orden">
+            <button id="btnFilter">Filtrar</button>
+            <button id="btnClearFilter">Limpiar Filtro</button>
+        </div>
+        <button id="btnCargarEnvios">Cargar Todos los Envíos</button>
+        <div id="enviosList"></div>
+    </section>
+</div>
+<script src="envios.js"></script>
 </body>
 </html>
