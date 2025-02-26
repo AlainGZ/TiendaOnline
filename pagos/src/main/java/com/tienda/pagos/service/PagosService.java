@@ -4,6 +4,7 @@ import com.tienda.pagos.model.Pagos;
 import com.tienda.pagos.repository.PagosRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -33,6 +34,7 @@ public class PagosService {
 
 	//metodo  para crear un pago
 	public Pagos crearPago(Pagos pago){
+		pago.setFechaPago(LocalDateTime.now());
 		return pagosRepository.save(pago);
 	}
 

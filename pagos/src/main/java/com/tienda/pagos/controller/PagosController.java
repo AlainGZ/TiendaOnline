@@ -31,9 +31,9 @@ public class PagosController {
 		return pagosService.obtenerPorOrdenId(ordenId);
 	}
 
-	@PostMapping("/{id}")
-	public Pagos crearPago(@RequestBody Pagos pagos){
-		return pagosService.crearPago(pagos);
+	@PostMapping
+	public Pagos crearPago(@RequestBody Pagos pago){
+		return pagosService.crearPago(pago);
 	}
 
 	@PutMapping("/id")
