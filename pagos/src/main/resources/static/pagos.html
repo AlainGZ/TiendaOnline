@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestion de Pagos</title>
+    <link rel="stylesheet" href="pagos.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gestion de Pagos</h1>
+
+        <section>
+            <h2>Crear y Actualizar Pago</h2>
+            <form id="pagoForm">
+                <input type="hidden" id="pagoId">
+
+                <input type="number" id="ordenId" placeholder="ID de la Orden" required>
+                <input type="number" step="0.01" id="monto" placeholder="Monto" required>
+
+
+                <select id="metodo" required>
+                    <option value="">Selecciona el metodo</option>
+                    <option value="TARJETA_CREDITO">Tarjeta de Credito</option>
+                    <option value="PAYPAL">PayPal</option>
+                    <option value="TRANSFERENCIA-BANCARIA">Transferencia Bancaria</option>
+                    <option value="EFECTIVO">Efectivo</option>
+                </select>
+
+                <select id="estado" required>
+                    <option value="">Seleccione el estado del pago</option>
+                    <option value="PENDIENTE">Pendiente</option>
+                    <option value="APROBADO">Aprovado</option>
+                    <option value="RECHAZADO">Rechazado</option>
+                </select>
+
+                <input type="number" id="referencia" placeholder="Referencia" required>
+
+                <button type="submit" id="btnSubmit">Crear Pago</button>
+                <button type="button" id="btnCancel" style="display:none;">Cancelar</button>
+            </form>
+            <p id="mensajePago"></p>
+        </section>
+
+        <section>
+            <h2>Listado Pagos</h2>
+            <div class="filter">
+                <input type="number" id="filterOrdenId" placeholder="Filtrar por Id Orden">
+                <button id="btnFilter">Filtrar</button>
+                <button id="btnClearFilter">Limpiar Filtro</button>
+            </div>
+            <button id="btnCargarPagos">Cargar Todos los Pagos</button>
+            <div id="pagosList"></div>
+        </section>
+
+    </div>
+<script src="pagos.js"></script>
+</body>
+</html>
