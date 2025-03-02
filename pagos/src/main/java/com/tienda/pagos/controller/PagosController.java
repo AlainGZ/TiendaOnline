@@ -1,5 +1,5 @@
 package com.tienda.pagos.controller;
-
+//AlainGZ
 import com.tienda.pagos.model.Pagos;
 import com.tienda.pagos.service.PagosService;
 import org.springframework.web.bind.annotation.*;
