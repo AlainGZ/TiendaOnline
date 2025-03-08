@@ -3,9 +3,9 @@ package com.tienda.carrito.repository;
 import com.tienda.carrito.model.Carrito;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.List;
+import java.util.Optional;
 
 public interface CarritoRepository extends JpaRepository<Carrito, Long> {
 
-	List<Carrito> findAllById(Long id);
+	Optional<Carrito> findByUsuarioId(Long usuarioId);
 }

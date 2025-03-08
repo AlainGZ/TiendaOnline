@@ -28,7 +28,6 @@ public class UsuarioController {
     }
 
 
-
     // Endpoint para iniciar sesión
     @PostMapping("/login")
     public Map<String, Object> login(@RequestBody Map<String, String> request) {
