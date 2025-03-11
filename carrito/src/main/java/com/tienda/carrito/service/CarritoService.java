@@ -20,6 +20,7 @@ public class CarritoService {
 				.orElseGet(() -> carritoRepository.save
 						(new Carrito(null, usuarioId, new ArrayList<>())));
 	}
+
 	public Carrito agregarProducto(Long usuarioId, Long productoId, int cantidad){
 		Carrito carrito = obntenerOCrearCarrito(usuarioId);
 
@@ -41,4 +42,12 @@ public class CarritoService {
 		return carritoRepository.save(carrito);
 	}
 
+	public Carrito eliminarProducto(Long usuarioId, Long productoId){
+
+		Carrito carrito = obntenerOCrearCarrito(usuarioId);
+		carrito.getItems().removeIf(item -> item.getProductoId().equals(productoId));
+		return carritoRepository.save(carrito);
+	}
+
+	
 }
