@@ -49,5 +49,14 @@ public class CarritoService {
 		return carritoRepository.save(carrito);
 	}
 
-	
+	public Carrito actualizarProducto(Long usuarioId, Long productoId, int nuevaCantidad){
+		Carrito carrito = obntenerOCrearCarrito(usuarioId);
+		for(ItemCarrito item : carrito.getItems()){
+			if (item.getProductoId().equals(productoId)) {
+				item.setCantidad(nuevaCantidad);
+				break;
+			}
+		}
+		return carritoRepository.save(carrito);
+	}
 }
