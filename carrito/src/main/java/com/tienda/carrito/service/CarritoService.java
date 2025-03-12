@@ -6,6 +6,7 @@ import com.tienda.carrito.repository.CarritoRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 @Service
 public class CarritoService {
@@ -59,4 +60,9 @@ public class CarritoService {
 		}
 		return carritoRepository.save(carrito);
 	}
+
+	public Optional<Carrito> obtenerCarrito(Long usuarioId){
+		return carritoRepository.findByUsuarioId(usuarioId);
+	}
+	
 }
