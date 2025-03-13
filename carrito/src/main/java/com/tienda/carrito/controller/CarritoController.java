@@ -27,4 +27,9 @@ public class CarritoController {
 		return carritoService.agregarProducto(usuarioId, productoId, cantidad);
 	}
 
+	@DeleteMapping("/{usuarioId}/eliminar")
+	public Carrito eliminarProducto(@PathVariable Long usuarioId,
+									@RequestParam Long productoId){
+		return carritoService.eliminarProducto(usuarioId,productoId);
+	}
 }
