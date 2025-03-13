@@ -20,4 +20,11 @@ public class CarritoController {
 		return carritoService.obntenerOCrearCarrito(usuarioId);
 	}
 
+	@PostMapping("/{usuarioId}/agregar")
+	public Carrito agregarProducto(@PathVariable Long usuarioId,
+								   @RequestParam Long productoId,
+								   @RequestParam int cantidad){
+		return carritoService.agregarProducto(usuarioId, productoId, cantidad);
+	}
+
 }
