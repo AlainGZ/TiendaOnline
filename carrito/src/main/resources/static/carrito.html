@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="carrito.css">
+</head>
+<body>
+<div class="container">
+    <h1>Carrito de Compras</h1>
+
+
+    <section>
+        <h2>Ver Carrito</h2>
+        <form id="verCarritoForm">
+            <input type="number" id="usuarioId" placeholder="ID de Usuario" required>
+            <button type="button" id="btnVerCarrito">Ver Carrito</button>
+        </form>
+        <div id="carritoDisplay"></div>
+    </section>
+
+
+    <section>
+        <h2>Agregar Producto</h2>
+        <form id="agregarForm">
+            <input type="number" id="usuarioIdAgregar" placeholder="ID de Usuario" required>
+            <input type="number" id="productoId" placeholder="ID del Producto" required>
+            <input type="number" id="cantidad" placeholder="Cantidad" required>
+            <button type="button" id="btnAgregar">Agregar al Carrito</button>
+        </form>
+        <p id="mensajeAgregar"></p>
+    </section>
+
+
+    <section>
+        <h2>Eliminar Producto</h2>
+        <form id="eliminarForm">
+            <input type="number" id="usuarioIdEliminar" placeholder="ID de Usuario" required>
+            <input type="number" id="productoIdEliminar" placeholder="ID del Producto" required>
+            <button type="button" id="btnEliminar">Eliminar del Carrito</button>
+        </form>
+        <p id="mensajeEliminar"></p>
+    </section>
+</div>
+<script src="carrito.js"></script>
+</body>
+</html>
