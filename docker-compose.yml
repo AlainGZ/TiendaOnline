@@ -1,0 +1,77 @@
+version: '3.8'
+
+services:
+  usuarios:
+    build: ./usuarios
+    ports:
+      - "8081:8081"
+    networks:
+      - tienda_network
+    depends_on:
+      - database
+
+  productos:
+    build: ./productos
+    ports:
+      - "8082:8082"
+    networks:
+      - tienda_network
+    depends_on:
+      - database
+
+  ordenes:
+    build: ./ordenes
+    ports:
+      - "8083:8083"
+    networks:
+      - tienda_network
+    depends_on:
+      - database
+
+  carrito:
+    build: ./carrito
+    ports:
+      - "8084:8084"
+    networks:
+      - tienda_network
+    depends_on:
+      - database
+
+  pagos:
+    build: ./pagos
+    ports:
+      - "8085:8085"
+    networks:
+      - tienda_network
+    depends_on:
+      - database
+
+  gateway:
+    build: ./gateway
+    ports:
+      - "8080:8080"
+    networks:
+      - tienda_network
+    depends_on:
+      - usuarios
+      - productos
+      - ordenes
+      - carrito
+      - pagos
+
+  database:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: tienda_db
+      MYSQL_USER: tienda_user
+      MYSQL_PASSWORD: tienda_pass
+    ports:
+      - "3306:3306"
+    networks:
+      - tienda_network
+
+networks:
+  tienda_network:
+    driver: bridge
