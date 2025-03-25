@@ -1,4 +1,4 @@
-# Usar la imagen oficial de OpenJDK 17
+# Usar la imagen oficial de OpenJDK 17vv
 FROM openjdk:17-jdk-slim
 
 # Establecer el directorio de trabajo dentro del contenedor
@@ -12,3 +12,5 @@ EXPOSE 8081
 
 # Comando para ejecutar la aplicación
 ENTRYPOINT ["java", "-jar", "app.jar"]
+
+
