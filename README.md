@@ -14,7 +14,7 @@ Proyecto de tienda online desarrollado usando una arquitectura basada en microse
 - **Inventario** → Control del stock de productos.
 - **Envíos** → Seguimiento de envíos de las órdenes.
 - **API Gateway** → Entrada única al sistema, orquesta la comunicación entre microservicios.
-- **Base de Datos** → MySQL 8.0.
+- **Base de Datos** → MySQL 8.0
 
 ---
 
